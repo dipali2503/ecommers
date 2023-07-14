@@ -1,0 +1,88 @@
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* .carousel-inner{
+  margin-bottom: 90px;
+} */
+
+/* .carousel {
+  position: relative;
+}
+
+.carousel-radio {
+  display: none;
+}
+
+.carousel-slides {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-radio:checked ~ .carousel-slides .carousel-item {
+  opacity: 1;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #888;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.carousel-radio:checked ~ .carousel-indicators .carousel-indicator {
+  background-color: #bbb;
+}
+
+.carousel-radio:checked ~ .carousel-indicators .carousel-indicator:hover {
+  background-color: #888;
+} */
+
+@media only screen and (max-width: 915px) and (min-width: 400px)  {
+  .Last{
+    width: 500px;
+    height: 300px
+  }
+}

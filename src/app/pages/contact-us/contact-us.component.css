@@ -1,0 +1,55 @@
+.body{
+  background-color: rgb(245, 205, 229);
+}
+.Contact{
+  background-color: rgb(233, 244, 248);
+  height: 700px;
+    margin-bottom: 200px;
+    margin-top: 50px
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(234, 243, 243);
+  /* margin-top: 130px; */
+}
+.one{
+  margin-top: 130px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}

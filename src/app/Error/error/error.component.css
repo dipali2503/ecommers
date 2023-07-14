@@ -1,0 +1,10 @@
+.error {
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.newError {
+  justify-content: center;
+}

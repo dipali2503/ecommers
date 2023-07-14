@@ -1,0 +1,75 @@
+<div *ngIf="isLoginAdmin">
+  <h1>Product Table</h1>
+  <table id="customers">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Tag</th>
+    </tr>
+    <tr *ngFor="let product of productList">
+      <td>{{product.title}}</td>
+      <td>{{product.price}} <button class="edit" data-toggle="modal" data-target="#myModal" (click)="getId(product._id)">Edit</button> </td>
+      <td>{{product.tag}} <button data-toggle="modal" data-target="#tag" class="edit" (click)="getId(product._id)">Edit</button></td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="isLoginAdmin">
+  <h1>User</h1>
+  <table id="customers">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Role</th>
+    </tr>
+    <tr *ngFor="let user of userList">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.status}} <button class="edit" (click)="changeStatus(user.status, user._id)">Change</button></td>
+      <td>{{user.type}}</td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="!isLoginAdmin">
+  <h1>Please Login</h1>
+  <button (click)="navigateLogin()" class="loginButton">Login</button>
+</div>
+
+<!-- Pop up Model -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- <h4 class="modal-title">Modal Header</h4> -->
+      </div>
+      <div class="modal-body">
+        <label for="fname">Enter new price</label>
+        <input id="fname" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" name="firstname" placeholder="New Price" [(ngModel)]="price">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default submit" (click)="changePrice(price)" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pop up Model -->
+<div id="tag" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- <h4 class="modal-title">Modal Header</h4> -->
+      </div>
+      <div class="modal-body">
+        <label for="fname">Enter new tag</label>
+        <input id="fname" type="text" name="firstname" placeholder="New tag" [(ngModel)]="tag">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default submit" (click)="changeTag(tag)" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

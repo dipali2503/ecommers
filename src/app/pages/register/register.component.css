@@ -1,0 +1,23 @@
+.form-control {
+  width: 50%;
+  margin-left: 250px;
+  margin-top: 40px;
+}
+
+.submitButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  height: 50px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-left: 460px;
+}
+
+.register{
+  text-align: center;
+    color: blueviolet;
+    font-family: 'FontAwesome';
+    margin-top: 20px;
+}

@@ -1,0 +1,72 @@
+<section id="product">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="productHeading text-center">
+                  <h2 class="mb-3">Exclusive Products</h2>
+                  <ul class="list-unstyled d-flex   justify-content-center ">
+                      <li><a class="text-decoration-none fw-semibold  space" [ngClass]="{'text-danger': tab === 'All'}" (click)="navigateToAll()">ALL</a></li>
+                      <li><a class="text-decoration-none fw-semibold  space" [ngClass]="{'text-danger': tab === 'Best'}" (click)="navigateToBest()">Best Sellers </a></li>
+                      <li><a  class="text-decoration-none fw-semibold  space" [ngClass]="{'text-danger': tab === 'New'}" (click)="navigateToNew()">New Arrival</a></li>
+                      <li><a  class="text-decoration-none fw-semibold  space" [ngClass]="{'text-danger': tab === 'Offer'}" (click)="navigateToOffer()">Special Offer</a></li>
+                      <!-- <li><a  class=" text-decoration-none fw-semibold text-black space" (click)="filterLtoH()">Low to High</a></li>
+                      <li><a  class=" text-decoration-none fw-semibold text-black space" (click)="filterHtoL()">High to Low</a></li> -->
+                      <div class="dropdown">
+                        <span class="text-decoration-none fw-semibold  text-black space">Filter</span>
+                        <div class="dropdown-content">
+                        <p (click)="filterLtoH()">Low to High</p>
+                        <p (click)="filterHtoL()">High to Low</p>
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <span class="text-decoration-none fw-semibold text-black space">Category</span>
+                        <div class="dropdown-content">
+                        <p (click)="filterCloth()">Cloths</p>
+                        <p (click)="filterjewelery()">jewelery</p>
+                        <p (click)="filterBags()">Bags</p>
+                        </div>
+                      </div>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-12 ">
+              <div class="row mt-3 mb-5 ">
+                  <div class="col-lg-4 pt-1 " *ngFor="let product of filterProduct | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+                      <div class="box-shadow">
+                          <div class="card">
+                              <img (click)="getSelectedProduct(product.id)" class="img-fluid" style="height: 200px; width: 300px; margin: 10px;" [src]="product.image" class="card-img-top"
+                                  alt="...">
+                              <div class="card-body">
+                                  <h5 class="card-title" style="font-size: 18px;">{{product.title}}</h5>
+                                  <p class="card-text"><span
+                                          class="text-danger fw-semibold me-2">${{product.price}}</span><del> ${{product.price}}</del>
+                                      <span class="text-success ms-2">35% Off</span></p>
+
+                                      <div class="tagBox" *ngIf="product.tag">
+                                        <h5 class="tagCSS">{{product.tag}}</h5>
+                                      </div>
+
+                                  <div class="row">
+                                      <div class="col-6">
+                                          <i class="fa-solid fa-star-half-stroke  m-0"
+                                              style="color: #f1f50f;"></i>
+                                              <span class="text-muted"></span>
+                                      </div>
+
+                                      <div class="col-6 text-end">
+                                          <button class="btn btn-sm btn-success" (click)="addItemToCart(product)"> Add To Cart</button>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+  </div>
+</section>
